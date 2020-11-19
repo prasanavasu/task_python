@@ -1,5 +1,5 @@
 space = [0]*20
-Id = {}
+Idd = {}
 class parking_spaces():
 	 
 	 def __init__(self):
@@ -8,17 +8,17 @@ class parking_spaces():
 
 	 def small(self,val,Id):
 	 	space[int(val)-1] = 1
-	 	Id[Id] = space[int(val)-1]
+	 	Idd[Id] = str(space[int(val)-1])
 	 	#print(f"motorcycle(small)")
 
 	 def medium(self,val,Id):
 	 	space[int(val)-1] = 2
-	 	Id[Id] = space[int(val)-1]
+	 	Idd[Id] = str(space[int(val)-1])
 	 	# print("car(medium)")
 
 	 def large(self,val,Id):
 	 	space[int(val)-1] = 3
-	 	Id[Id] = space[int(val)-1]
+	 	Idd[Id] = str(space[int(val)-1])
 	 	# print("bus(large)")
 
 	 def unfilled_slot(self):
@@ -27,10 +27,12 @@ class parking_spaces():
 	 		if j ==0:
 	 			self.__space.append(i+1)
 	 	print(f'\n free space for parking slot {self.__space}')
+	 	print("****************************** \n")
 
 	 def check(self,count=0):
 	 	if count == 0:
-	 		print(f'filled slot {space} \n filled id with parking slot {Id}')
+	 		print(f'filled slot {space} \n ****************************** \n filled id with parking slot {Idd}')
+	 		print("******************************\n")
 	 	else:
 	 		count = space.count(count)
 	 	return count
@@ -45,7 +47,7 @@ def tic(vehicle_type,vehicle_ID):
 	pk = parking_lot()
 
 	if vehicle_type == 'small':
-		print('small:',vehicle_ID)
+		#print('small:',vehicle_ID)
 		pk.unfilled_slot()
 		val = input('Enter the slot:')
 		c = pk.check(1)
@@ -55,7 +57,7 @@ def tic(vehicle_type,vehicle_ID):
 			print("filled")
 
 	elif vehicle_type == 'medium':
-		print('medium:',vehicle_ID) 
+		#print('medium:',vehicle_ID) 
 		pk.unfilled_slot()
 		val = input('Enter the slot:')
 		c = pk.check(2)
@@ -65,7 +67,7 @@ def tic(vehicle_type,vehicle_ID):
 			print("filled")
 
 	elif vehicle_type == 'large':
-		print('large:',vehicle_ID) 
+		#print('large:',vehicle_ID) 
 		pk.unfilled_slot()
 		val = input('Enter the slot:')
 		c = pk.check(3)
@@ -88,16 +90,17 @@ def tic(vehicle_type,vehicle_ID):
 	else:
 		pass
 
-	pk.unfilled_slot()
+	
 
 	
 while True:
-	
+	print("******************************")
 	print('For example: \n two wheels \n  Enter the vehicle_type : small \n\ncar is light vechile \n Enter the vehicle_type : medium \n\n lorry is heavy vechile \n Enter the vehicle_type : large \n')
+	print("******************************")
 	vehicle_type = input('Enter the vehicle_type :')
 	print()
 	vehicle_ID = input('enter the vechicle ID:')
-
+	print("******************************")
 	s = tic(vehicle_type,vehicle_ID)
 	if s == 'quit':
 		break
