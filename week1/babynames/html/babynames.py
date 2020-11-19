@@ -49,7 +49,7 @@ def extract_names(filename):
   names.append(year)
   
   tuples = re.findall(r'<td>(\d+)</td><td>(\w+)</td>\<td>(\w+)</td>', text)
-  names_to_rank =  {}
+  '''names_to_rank =  {}
   for i in tuples:
     (rank, boyname, girlname) = i  
     
@@ -59,13 +59,13 @@ def extract_names(filename):
     if girlname not in names_to_rank:
       names_to_rank[girlname] = rank
     
-  sorted_names = sorted(names_to_rank.keys())
+  sorted_names = names_to_rank.keys())
 
   for name in sorted_names:
    names.append(name + " " + names_to_rank[name])
-   
+   '''
   # +++your code here+++
-  return names
+  return tuples
 
 
 def main():
@@ -88,16 +88,14 @@ def main():
   for filename in args:
     names = extract_names(filename)
 
-
-    text = '\n'.join(names)
     
 
     if summary:
       outf = open(filename + '.summary', 'w')
-      outf.write(text + '\n')
+      outf.write(f'{names}' + '\n')
       outf.close()
     else:
-      print (text)
+      print (f' {names}')
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
   
