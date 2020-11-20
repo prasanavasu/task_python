@@ -1,6 +1,6 @@
 space = [0]*20
 Idd = {}
-class parking_spaces():
+class parkingspaces():
 	 
 	 def __init__(self):
 	 	
@@ -21,7 +21,7 @@ class parking_spaces():
 	 	Idd[Id] = str(space[int(val)-1])
 	 	# print("bus(large)")
 
-	 def unfilled_slot(self):
+	 def unfilledslot(self):
 	 	self.__space = []
 	 	for i,j in enumerate(space):
 	 		if j ==0:
@@ -37,42 +37,42 @@ class parking_spaces():
 	 		count = space.count(count)
 	 	return count
 
-class parking_lot(parking_spaces):
+class parkinglot(parkingspaces):
 
 	def __init__(self):
 		super().__init__()
 		# print("parking lot")
 
-def tic(vehicle_type,vehicle_ID):
+def tic(vehicletype,vehicleID):
 	pk = parking_lot()
 
-	if vehicle_type == 'small':
+	if vehicletype == 'small':
 		#print('small:',vehicle_ID)
 		pk.unfilled_slot()
 		val = input('Enter the slot:')
 		c = pk.check(1)
 		if c != 10:
-			pk.small(val,vehicle_ID)
+			pk.small(val,vehicleID)
 		else:
 			print("filled")
 
-	elif vehicle_type == 'medium':
+	elif vehicletype == 'medium':
 		#print('medium:',vehicle_ID) 
 		pk.unfilled_slot()
 		val = input('Enter the slot:')
 		c = pk.check(2)
 		if c != 7:
-			pk.medium(val,vehicle_ID)
+			pk.medium(val,vehicleID)
 		else:
 			print("filled")
 
-	elif vehicle_type == 'large':
+	elif vehicletype == 'large':
 		#print('large:',vehicle_ID) 
-		pk.unfilled_slot()
+		pk.unfilledslot()
 		val = input('Enter the slot:')
 		c = pk.check(3)
 		if c != 3:
-			pk.large(val,vehicle_ID)
+			pk.large(val,vehicleID)
 		else:
 			print("***************--filled--***************")
 
