@@ -43,7 +43,7 @@ class parkinglot(parkingspaces):
 		super().__init__()
 		# print("parking lot")
 
-def tic(vehicletype,vehicleID):
+def ticket(vehicletype,vehicleID):
 	pk = parking_lot()
 
 	if vehicletype == 'small':
@@ -101,7 +101,7 @@ while True:
 	print()
 	vehicle_ID = input('enter the vechicle ID:')
 	print("******************************")
-	s = tic(vehicle_type,vehicle_ID)
+	s = ticket(vehicle_type,vehicle_ID)
 	if s == 'quit':
 		break
 	
