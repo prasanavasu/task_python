@@ -1,4 +1,5 @@
 
+# lamdba function
 li = [ ["34587", "Learning Python, Mark Lutz", 4, 40.95], 
            ["98762", "Programming Python, Mark Lutz", 5, 56.80], 
            ["77226", "Head First Python, Paul Barry", 3,32.95],
@@ -12,7 +13,7 @@ for i in li:
 	lst.append(a)
 
 print(lst)
-
+print("******************************************")
 ##########################################################
 
 orders = [ [1, ("5464", 4, 9.99), ("8274",18,12.99), ("9744", 9, 44.95)], 
@@ -25,3 +26,4 @@ totals = list(map(lambda x: [x[0]] + [reduce(lambda a,b: a + b, x[1:])],totals))
 
 
 print(totals)
+print("******************************************")
